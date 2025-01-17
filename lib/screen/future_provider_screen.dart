@@ -18,9 +18,9 @@ class FutureProviderScreen extends ConsumerWidget {
         children: [
           state.when(
             data: (data) {
-              return Text(
-                data.toString(),
-                textAlign: TextAlign.center,
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: data.map((e) => Text(e.toString())).toList(),
               );
             },
             error: (error, stackTrace) {
